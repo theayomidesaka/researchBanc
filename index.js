@@ -21,6 +21,8 @@ function revealModayOverlay(){
     nameOfItems.focus()
 }
 
+
+//Empty State Function
 emptyStateButton.addEventListener("click", revealModayOverlay)
 function revealModayOverlay(){
     modalOverlay.style.display = "flex"
@@ -38,34 +40,82 @@ closeIcon.addEventListener("click", closeModalOverlay)
 
 let researchItems = []
 
+//Form Validation
+
+
 
 //Collect and handle data form the data
 form.addEventListener("submit", handleFormData)
+
 
 function handleFormData (event){
     event.preventDefault()
 
 
     //Input Data collection
-    let itemName = nameOfItems.value
-    let itemLink = linkToItems.value
-    let itemdescription = decsriptionOfItem.value
+    let itemName = nameOfItems.value.trim();
+    let itemLink = linkToItems.value.trim();
+    let itemdescription = decsriptionOfItem.value.trim();
 
 
     const aCreatedItem = {
         itemNAME : itemName,
         itemLINK : itemLink,
-        itemDESCRIPTION : itemdescription
+        itemDESCRIPTION : itemdescription,
     }
 
-    researchItems.push(aCreatedItem)
-    localStorage.setItem("itemsOfResearch", JSON.stringify(researchItems))
-    form.reset()
-    closeModalOverlay()
-    fetchItems()
-
     //Form validation
+    function formValidation(){
+        let isValid = true;
 
+        let nameAlertNew = document.getElementById("name-alert");
+        let itemAlertNew = document.getElementById("link-alert");
+        let descriptionAlertNew = document.getElementById("description-alert")
+        
+        
+    
+        if(itemName.length === 0 ) {
+            nameAlertNew.innerText = "Please enter an item name";
+            nameAlertNew.style.display = "block";
+            nameOfItems.style.border = "1px solid red";
+            isValid = false;
+        }else{
+            nameAlertNew.innerText = "";
+            nameOfItems.style.border = "";
+        }
+
+        if(itemLink.length === 0 ) {
+            itemAlertNew.innerText = "Please enter a research link";
+            itemAlertNew.style.display = "block";
+            linkToItems.style.border = "1px solid red";
+            isValid = false;
+        }else{
+            itemAlertNew.innerText = "";
+            linkToItems.style.border = "";
+        }
+
+        if(itemdescription.length === 0 ) {
+            descriptionAlertNew.innerText = "Please enter a description for this item";
+            descriptionAlertNew.style.display = "block";
+            decsriptionOfItem.style.border = "1px solid red";
+            isValid = false;
+        }else{
+            descriptionAlertNew.innerText = "";
+            decsriptionOfItem.style.border = "";
+
+        }
+    return isValid;
+
+    }
+    //Check for validation before proceeding
+        if(formValidation()){
+        researchItems.push(aCreatedItem);
+        localStorage.setItem("itemsOfResearch", JSON.stringify(researchItems));
+        form.reset();
+        closeModalOverlay();
+        fetchItems();
+    }
+     
 }
 
 
@@ -150,5 +200,3 @@ function deleteItem(researchLink){
     emptyState()
 }
 
-
- 
