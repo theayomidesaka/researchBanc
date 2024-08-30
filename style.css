@@ -434,7 +434,8 @@ input::placeholder, textarea::placeholder{
         background-image: url("./image/bg_image.svg");
         background-repeat: no-repeat;
         background-size:cover;
-        padding: 0rem 2rem;
+        padding: 0rem 2rem 4rem 2rem;
+        overflow: scroll;
     }
     
     .top-navigation{
@@ -734,7 +735,7 @@ input::placeholder, textarea::placeholder{
     
     
     .modal{
-        width: 60%;
+        width: 70%;
         background-color: #ffffff;
         padding: 2rem;
         border-radius: 1.5rem;
@@ -849,11 +850,14 @@ input::placeholder, textarea::placeholder{
 @media only screen and (max-width:620px){
     .hero-section{
         width: 100%;
-        height: auto;
+        height: 100vh;
         background-image: url("./image/bg_image.svg");
         background-repeat: no-repeat;
         background-size:cover;
-        padding: 0rem 1rem;
+        padding: 0rem 1rem 4rem 1rem;
+        overflow: scroll;
+    
+
     }
     
     .top-navigation{
@@ -1007,7 +1011,7 @@ input::placeholder, textarea::placeholder{
     .right-hero-content{
         width: 100%;
         height: auto;
-        padding: 1rem;
+        padding: 1rem 1rem 1rem 1rem;
         border: 1px solid #BBA0D6;
         display: flex;
         flex-direction: column;
@@ -1022,7 +1026,7 @@ input::placeholder, textarea::placeholder{
     }
     
     .empty-state-container{
-        width: 80%;
+        width: 100%;
         height: auto;
         display: flex;
         flex-direction: column;
@@ -1049,14 +1053,14 @@ input::placeholder, textarea::placeholder{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        row-gap: 0.8rem;
+        row-gap: 0.5rem;
        
     }
     
     .empty-text-content h5{
         color: #ffffff;
         text-align: center;
-        font-size: 1.5rem;
+        font-size: 1rem;
         font-weight: 500;
     }
     
@@ -1064,13 +1068,13 @@ input::placeholder, textarea::placeholder{
         color: #ffffff;
         text-align: center;
         font-weight: 350;
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
     
     .empty-state-btn{
         width: fit-content;
         height: auto;
-        padding: 1rem 1.5rem ;
+        padding: 0.8rem 1.2rem ;
         border-radius: 0.8rem;
         border-style: none;
         display: flex;
@@ -1078,7 +1082,7 @@ input::placeholder, textarea::placeholder{
         column-gap: 0.8rem;
         justify-content: center;
         align-items: center;
-        font-size: 1rem;
+        font-size: 0.8rem;
         cursor: pointer;
         background-color: #ffffff;
     }
