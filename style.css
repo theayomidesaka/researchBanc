@@ -1267,6 +1267,7 @@ input::placeholder, textarea::placeholder{
         border: none;
         color: white;
         border-radius: 0.5rem;
+        font-size: 0.9rem;
     } 
 
 }
