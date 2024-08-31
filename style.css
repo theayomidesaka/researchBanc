@@ -802,7 +802,7 @@ input::placeholder, textarea::placeholder{
     }
     
     label{
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
     
     input{
@@ -826,7 +826,7 @@ input::placeholder, textarea::placeholder{
     }
     
     input::placeholder, textarea::placeholder{
-        font-size: 0.75rem;
+        font-size: 0.8rem;
     }
     
     .form-button{
@@ -842,6 +842,7 @@ input::placeholder, textarea::placeholder{
         border: none;
         color: white;
         border-radius: 0.5rem;
+        font-size: 1rem;
     } 
 
     
@@ -1153,15 +1154,16 @@ input::placeholder, textarea::placeholder{
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        padding: 1.5rem;
     }
     
     
     .modal{
-        width: 90%;
+        width: 100%;
         background-color: #ffffff;
         padding: 2rem;
         border-radius: 1.5rem;
-        overflow: scroll;
+        /* overflow: scroll; */
     }
     
     .close-icon{
